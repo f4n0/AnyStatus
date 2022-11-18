@@ -271,7 +271,7 @@ namespace AnyStatus.Plugins.Azure.API
             var request = new RestRequest(string.Format("{0}/{1}/{2}/_apis/git/pullrequests", _endpoint.Address, Uri.EscapeDataString(organization), Uri.EscapeDataString(project)));
 
             request.AddParameter("searchCriteria.status", status);
-      //request.AddParameter("searchCriteria.includeLinks", true); //web link is not included in the response
+            //request.AddParameter("searchCriteria.includeLinks", true); //web link is not included in the response
 
       return ExecuteAsync<CollectionResponse<GitPullRequest>>(request, cancellationToken);
         }
