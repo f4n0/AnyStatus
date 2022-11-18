@@ -7,8 +7,10 @@
         public string Title { get; set; }
 
         public string Status { get; set; }
-
+    
         public string MergeStatus { get; set; }
+
+        public string Url { get; set; }
 
         public string GetStatus() => MergeStatus switch
         {

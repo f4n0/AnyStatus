@@ -17,9 +17,10 @@ namespace AnyStatus.Plugins.Azure
 
             CreateMap<GitPullRequest, AzureDevOpsPullRequestWidget>()
                 .ForMember(d => d.Name, opt => opt.MapFrom(src => src.Title))
-                .ForMember(d => d.Status, opt => opt.MapFrom(src => src.GetStatus()));
+                .ForMember(d => d.Status, opt => opt.MapFrom(src => src.GetStatus()))
+                .ForMember(d => d.URL, opt => opt.MapFrom(src => src.Url));
 
-            CreateMap<WorkItem, AzureDevOpsWorkItemWidget>()
+      CreateMap<WorkItem, AzureDevOpsWorkItemWidget>()
                 .ForMember(d => d.WorkItemId, opt => opt.MapFrom(src => src.Fields["System.Id"]))
                 .ForMember(d => d.Name, opt => opt.MapFrom(src => src.Fields["System.Title"]))
                 .ForMember(d => d.Status, opt => opt.MapFrom(src => src.GetStatus()))
